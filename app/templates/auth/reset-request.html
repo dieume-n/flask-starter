@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="bg-gray-200">
+    <div class="flex items-center justify-center h-screen">
+        <div class="sm:w-full sm:max-w-md">
+            {% include "macros/_alerts.html" %}
+
+            <div class="px-4 py-8 mt-8 bg-white rounded-lg shadow sm:px-10">
+                <div class="mb-6 space-y-4 text-center">
+                    <h1 class="text-2xl font-medium">Forgot your password?</h1>
+                    <p class="text-sm">We get it, stuff happens. Just enter your email address below and we'll send you
+                        a link to reset
+                        your password!</p>
+                </div>
+                <form action="{{ url_for('auth.reset_request')}}" method="post" class="mt-8">
+                    {{ form.csrf_token }}
+
+                    <m:render_field form.email />
+                    <m:render_submit form.submit />
+                    <div class="mt-8 space-y-2 text-center border-t border-gray-300">
+                        <a href="{{ url_for('auth.register')}}"
+                            class="block mt-6 font-medium text-indigo-600 hover:text-indigo-500">Create an
+                            account?</a>
+                        <a href="{{ url_for('auth.login')}}"
+                            class="block font-medium text-indigo-600 hover:text-indigo-500">Already have an
+                            account?
+                            Login!</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

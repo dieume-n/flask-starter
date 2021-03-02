@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/app.css')}}">
+	<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+	<title>Flask Starter</title>
+	<style>
+		[x-cloak] {
+			display: none;
+		}
+	</style>
+</head>
+
+<body class="bg-gray-200 antialiased">
+	{% block content %} {% endblock %}
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "flask-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "postcss app/static/css/tailwind.css -o app/static/css/app.css",
+    "prod": "cross-env NODE_ENV=production postcss app/static/css/tailwind.css -o app/static/css/app.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/forms": "^0.2.1",
+    "autoprefixer": "^10.2.4",
+    "cross-env": "^7.0.3",
+    "postcss": "^8.2.5",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.0.2"
+  }
+}

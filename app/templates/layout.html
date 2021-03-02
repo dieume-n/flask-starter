@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% include "components/navigation.html" %}
+
+<div class="max-w-7xl mx-auto mt-6 px-4 lg:px-8">
+    {% block page_content %} {% endblock %}
+</div>
+
+{% endblock %}

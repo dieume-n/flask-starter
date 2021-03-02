@@ -1,0 +1,8 @@
+flake8==3.8.4
+pylint==2.6.2
+Flask-DebugToolbar==0.11.0
+pytest==6.2.2
+pytest-flask==1.1.0
+pytest-cov==2.11.1
+
+-r requirements.txt

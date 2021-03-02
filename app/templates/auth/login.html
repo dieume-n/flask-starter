@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="bg-gray-200">
+	<div class="flex items-center justify-center h-screen">
+		<div class="sm:w-full sm:max-w-md">
+			{% include "macros/_alerts.html" %}
+			<div class="text-center">
+				<h1 class="text-3xl font-bold">Sign into your account</h1>
+			</div>
+			<div class="px-4 py-8 mt-8 bg-white rounded-lg shadow sm:px-10">
+				<form action="{{ url_for('auth.login')}}" method="post">
+					{{ form.csrf_token }}
+
+					<m:render_field form.email />
+					<m:render_field form.password mt=6 />
+					<div class="flex items-center justify-between mt-6">
+						<m:render_checkbox form.remember />
+						<div class="text-sm">
+							<a href="{{ url_for('auth.reset_request')}}"
+								class="font-medium text-indigo-600 hover:text-indigo-500">
+								Forgot your password?
+							</a>
+						</div>
+					</div>
+					<m:render_submit form.submit />
+
+					<div class="mt-6 text-center">
+						<a href="{{ url_for('auth.register')}}"
+							class="font-medium text-indigo-600 hover:text-indigo-500">Don't have an account?</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
